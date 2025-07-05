@@ -13,8 +13,8 @@ router.post("/",protectRoute,async (req,res)=>{
                 message:"All fields are required"
             })
         }
-        const uploasResponse = await cloudinary.uploader.upload(image)
-        const imageUrl = uploasResponse.secure_url
+        const uploadResponse = await cloudinary.uploader.upload(image)
+        const imageUrl = uploadResponse.secure_url
         const newBook = new Book({
             title,
             caption,
